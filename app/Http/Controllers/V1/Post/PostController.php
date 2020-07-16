@@ -59,7 +59,7 @@ class PostController extends Controller
             if ($counter == ($limit)) {
                 return $result;
             }
-            //return $edge->node->edge_media_to_caption;
+            
             $post = $edge->node->edge_media_to_caption->edges;
             if (!empty($post[0])) {
                 $sentiment = $this->getSentiment($post[0]->node->text);
@@ -69,11 +69,6 @@ class PostController extends Controller
             }
             $counter++;
         }
-    }
-
-    private function getTextFromEdge($edge)
-    {
-        return $edge[0]->node->text;
     }
 
     /**
