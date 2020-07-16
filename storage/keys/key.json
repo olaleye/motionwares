@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "stellar-state-283508",
+  "private_key_id": "a5addef18cd5c2b865ad41921001d0d2c7122bc2",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC6YUeigJFwbZZx\nYE0IncuzyzNIFP7VwaRUbdpmZ2Z8gyvagAgSqSs2btBxhac/12nSJrJcpUXXgoag\nM7PYXZqs4IGJLrCow6e27Au3ie09Y6+coSYvZrxHnuM0oFzK86ERqBwgUQexfkzX\n6Pru0ktx2AHgsKuIpfitRVkn7pqm3cvGVic/E3NoxJ/CnMVTCuMHITxN5t5Haod3\nFD3oxZj3C87SCugPm/WYMiaYBJLmOjURYWf3NMg5KAX8RGOx/6YMxsnoc23g+pV+\niEc2QhdAe6RZzZ1zRT/3bz2sFAX7KlIdS52FgTjQIYk+rxvwjB+4RuQn3WWCpXh/\ntM8+HmTfAgMBAAECggEAUEGIg7iiKAwAfsStlzq/lyW2aOEllO0j8nk1VOhMkOw4\n64c7MrHm2jMgjem0CcEcH7KrFkrSxsi9aOmqlU5FRxELpoNU7e8GXrXJG9kIL+mn\nmqYn17yA8cRA6Q3utzPulThTGDVcPzl4JHb96u3iL90IffUFgDub2BznFdNgg958\nPae2gjQJKrnwCE5A5LsN+aTFafSOYOTyD3AgZwC68KY+jVHpaRU/eZ7nc1s5NckF\nNcqZsRh8BrKcefmMXP9VugRlRtQ87DOQO2FdBvdEtOM8LiXWoHoIPkGi5TMJ3FgT\nExPjHwEU+C5nUEni+kXn2Cm1e6Ml66byOudot2PaoQKBgQDuxzNs7ajdMoEwaoDP\nfrdVf1H10io2qnRH9mb+IwPYTiG0QvWHhEkWcYiekfxUETRgcL6qZe7NLDAbNiF5\nx5h2FbVI4xjC8uCgC/0IVACGdmOKvPg2F49DBTrf7aVhfLhHKGMyNFhQzoSeuRqS\nht4JNOwsb7DgcBUXU+fPDpD0YQKBgQDH0pmVqBo5Z4isu5jwoIiYmtt/oG+Fn3sX\nIHatSTkjNCi5+ZURocrMw7LcU5GPFRVC16fUaFPx7FQFrKsLo2K7NCP+UDYd3ZLK\nauxOXspY8JgBpss6R42BPuCV8VwYciUtRunzUj8b2yyI7NjyS4zlAVVOI3lYW1Ti\nv6VA0knhPwKBgQCGh30V1iDZ32aiHJ9OSJqKdR18XliiTA8PrGgCrz+vUvXyVfd3\nzrRPDNBoZt+/jaHw5BTIdH3C4y6HZkweDLJ9dWWaFzkQPT8JbTe2xX02ROV4eVdv\nQn7Yx82P9JjFADvi+4JH+u33OSPHOYsbGxlmHoch0hvZl8yKRB/KrO5GgQKBgAF+\nd5uA2EFZntH7zRbvfFX3wnBf2LWdDaSMn5aIF59FwpAxZ4XsOcHyLKItFceGFtSb\nHCwgY5BJfg9UzSqXHCPeLe621tC+WVyeFAo59zVXByvr/VUAN/ShbbhxR4j/QXvn\nLdSd5s7kgp67dpvJKNKFggfFiCC6/hV77VZgvCCtAoGAeZC1vHs2e/Wksh42BhTQ\nlDZDjE6VBp8FL5UsGhAl5swYzn5WNyJb+2MN/Pja8TniPFwHvFhTFPJid+VsQrCN\nAtHE05k+wnzHDo2RhP/o+AY8zexyaxFkpt4GglroiWLk3p03L4n+7i0Wp9czEhsb\nFMNaqXQVQHdvHgT+cuyOhcs=\n-----END PRIVATE KEY-----\n",
+  "client_email": "motionware@stellar-state-283508.iam.gserviceaccount.com",
+  "client_id": "114867758782903437351",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/motionware%40stellar-state-283508.iam.gserviceaccount.com"
+}

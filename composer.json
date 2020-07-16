@@ -6,7 +6,8 @@
     "type": "project",
     "require": {
         "php": "^7.2.5",
-        "guzzlehttp/guzzle": "^7.0",
+        "google/cloud-language": "^0.22.4",
+        "guzzlehttp/guzzle": "6.5.5",
         "laravel/lumen-framework": "^7.0"
     },
     "require-dev": {

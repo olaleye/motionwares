@@ -3,11 +3,10 @@
 namespace App\Http\Controllers\V1\Post;
 
 use App\Http\Controllers\Controller;
-use App\Http\Resources\PostCollection;
-use Illuminate\Http\Request;
+use Google\Cloud\Core\ServiceBuilder;
 use GuzzleHttp;
 use GuzzleHttp\Client;
-
+use Illuminate\Support\Facades\File;
 
 class PostController extends Controller
 {
@@ -37,7 +36,8 @@ class PostController extends Controller
         try {
             $data = $this->guzzle->get('/explore/tags/nodejs/?__a=1');
             $result = GuzzleHttp\json_decode($data->getBody());
-            $edges = $this->getEdgesByLimit($result->graphql->hashtag->edge_hashtag_to_media->edges, $limit);
+            $edges = $this->getPostAndSentimentsByLimit($result->graphql->hashtag->edge_hashtag_to_media->edges, $limit);
+
             return response()->json($edges, 200);
         } catch (\GuzzleHttp\Exception\ClientException $e) {
             return GuzzleHttp\json_decode($e->getResponse()->getBody());
@@ -47,17 +47,47 @@ class PostController extends Controller
     /**
      * @param array $edges
      * @param int $int
+     * @return array
      */
-    private function getEdgesByLimit(array $edges, int $limit):array
+    private function getPostAndSentimentsByLimit(array $edges, int $limit): array
     {
         $result = [];
         $counter = $limit;
         foreach ($edges as $edge) {
-            if($counter == 0){
+            if ($counter == 0) {
                 return $result;
             }
-            array_push($result, $edge);
+            $post = $edge->node->edge_media_to_caption->edges[0]->node;
+            $sentiment = $this->getSentiment($post->text);
+            array_push($result, $sentiment);
             $counter--;
         }
+    }
+
+    /**
+     * @param string $text
+     * @return array
+     */
+    private function getSentiment(string $text): array
+    {
+        $path = File::get(storage_path('keys/key.json'));
+
+        #instantiates a service builder
+        $cloud = new ServiceBuilder([
+            'projectId' => 'stellar-state-283508',
+            'keyFilePath' => storage_path('keys/key.json')
+        ]);
+
+        $language = $cloud->language();
+
+        # Detects the sentiment of the text
+        $annotation = $language->analyzeSentiment($text);
+        $sentiment = $annotation->sentiment();
+
+        return [
+            'post' => $text,
+            'sentimentScore' => $sentiment['score'],
+            'sentimentMagnitude' => $sentiment['magnitude']
+        ];
     }
 }
