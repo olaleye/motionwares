@@ -15,6 +15,8 @@ class PostController extends Controller
 
     public function __construct()
     {
+        $this->middleware('auth', ['only' => 'show']);
+
         $this->headers = [
             'Accept' => 'application/json',
         ];
@@ -52,16 +54,26 @@ class PostController extends Controller
     private function getPostAndSentimentsByLimit(array $edges, int $limit): array
     {
         $result = [];
-        $counter = $limit;
+        $counter = 0;
         foreach ($edges as $edge) {
-            if ($counter == 0) {
+            if ($counter == ($limit)) {
                 return $result;
             }
-            $post = $edge->node->edge_media_to_caption->edges[0]->node;
-            $sentiment = $this->getSentiment($post->text);
-            array_push($result, $sentiment);
-            $counter--;
+            //return $edge->node->edge_media_to_caption;
+            $post = $edge->node->edge_media_to_caption->edges;
+            if (!empty($post[0])) {
+                $sentiment = $this->getSentiment($post[0]->node->text);
+                array_push($result, $sentiment);
+            } else {
+                array_push($result, []);
+            }
+            $counter++;
         }
+    }
+
+    private function getTextFromEdge($edge)
+    {
+        return $edge[0]->node->text;
     }
 
     /**

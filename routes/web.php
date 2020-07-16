@@ -12,15 +12,11 @@
 */
 
 $router->get('/', function () use ($router) {
-    //return $router->app->version();
-    $instagram = new \InstagramScraper\Instagram();
-    $medias = $instagram->getMediasByTag('nodejs', 20);
-    var_dump($medias);
-    //echo $nonPrivateAccountMedias[0]->getLink();
+    return redirect('https://motionwares.com/p/olaleye.osunsanya');    
 });
 
 $router->group(['namespace' => 'V1'], function() use ($router){
-    //Client controller
+    //Post controller
     $router->group(['namespace' => 'Post'], function() use ($router){
         $router->get('/v1/posts/limit/{limit}', 'PostController@show');
     });
